@@ -1,3 +1,32 @@
+/* #nav-links {
+    padding-right: 50px;
+}
+
+.navbar-brand {
+    padding-left: 30px;
+    font-weight: bold;
+}
+
+.nav-item {
+    padding-right: 10px;
+    font-weight: bold;
+}
+
+.navbar {
+    border-bottom: solid;
+    border-color: #000000;
+} */
+
 #color-scale {
-    font-size: 10px
-};
+    margin-top: 10px;
+    margin-left: 5px;
+    font-size: 10px;
+}
+
+.chart-top {
+    margin-top: 30px;
+}
+
+.well select {
+    margin-bottom: 10px;
+}

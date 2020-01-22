@@ -33,7 +33,7 @@ function getColor(d) {
                             d > 15 ? colorScale[3] :
                                 d > 10 ? colorScale[2] :
                                     d > 5 ? colorScale[1] :
-                                    colorScale[0]
+                                        colorScale[0]
 };
 
 //Add color scale for reference
@@ -46,7 +46,6 @@ d3.select("#color-scale").selectAll('div')
     .style('height', '20px')
     .style('padding-left', '2px')
     .style('padding-top', '2px')
-    .style('margin-bottom', '50px')
     .style('display', 'inline-block')
     .style('background-color', (d => d))
 
@@ -115,7 +114,12 @@ function getInitialData() {
             var busBarData = [busBarTrace];
 
             //Add layout properties for the bus bar chart
-            var busBarLayout = { title: 'Monthly Bus Riders' };
+            var busBarLayout = {
+                title: 'Monthly Bus Riders',
+                autosize: false,
+                width: 350,
+                height: 350
+            };
 
             //Create the bus bar chart
             Plotly.newPlot('bar-bus', busBarData, busBarLayout);
@@ -135,7 +139,12 @@ function getInitialData() {
             var maxBarData = [maxBarTrace];
 
             //Add layout properties for the MAX bar chart
-            var maxBarLayout = { title: 'Monthly MAX Riders' };
+            var maxBarLayout = { 
+                title: 'Monthly MAX Riders',
+                autosize: false,
+                width: 350,
+                height: 350
+            };
 
             //Create the MAX bar chart
             Plotly.newPlot('bar-max', maxBarData, maxBarLayout);
@@ -155,7 +164,11 @@ function getInitialData() {
             var wesBarData = [wesBarTrace];
 
             //Add layout properties for the WES bar chart
-            var wesBarLayout = { title: 'Monthly WES Riders' };
+            var wesBarLayout = { title: 'Monthly WES Riders', 
+            autosize: false,
+            width: 350,
+            height: 350
+        };
 
             //Create the WES bar chart
             Plotly.newPlot('bar-wes', wesBarData, wesBarLayout);
@@ -210,14 +223,6 @@ function getInitialData() {
                     // }
                 }
             };
-
-            // var lineLayout = {
-            //     legend: {
-            //         x: 1,
-            //         xanchor: 'right',
-            //         y: 1
-            //     },
-            // };
 
             //Store all traces for the yearly line chart
             var yearlyData = [traceBusLine, traceMaxLine, traceWesLine];
