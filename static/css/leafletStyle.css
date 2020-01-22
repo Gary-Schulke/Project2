@@ -6,7 +6,7 @@ body {
 #map,
 body,
 html {
-  height: 98.1%;
+  height: 98%;
 }
 
 .legend {
@@ -32,4 +32,9 @@ html {
 .nav-item {
   padding-right: 10px;
   font-weight: bold;
+}
+
+.navbar {
+  border-bottom: solid;
+  border-color: #000000;
 }

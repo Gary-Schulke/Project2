@@ -11,3 +11,24 @@
     padding-right: 10px;
     font-weight: bold;
 }
+
+.navbar {
+    border-bottom: solid;
+    border-color: #000000;
+}
+
+.data-header {
+    margin-top: 80px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.data-subheader {
+    margin-top: 25px;
+    font-weight: bold;
+}
+
+.data-subheader1 {
+    margin-top: 40px;
+    font-weight: bold;
+}
