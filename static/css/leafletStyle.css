@@ -1,30 +1,35 @@
 body {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
   
 #map,
 body,
 html {
-  height: 100%;
-}
-
-.info {
-  padding-left: 5px;
-  padding-right: 5px;
-  background-color: #D3D3D3;
-  border-radius: 4px;
+  height: 98.1%;
 }
 
 .legend {
-  line-height: 24px;
+  padding: 10px;
+  background-color: #FFFFFF;
+  border-radius: 5px;
+  border: 2px solid;
+  border-color: #A9A9A9;
+  line-height: 32px;
   color: #000000;
+  width: 160px;
 }
 
-.legend i {
-  width: 20px;
-  height: 20px;
-  float: right;
-  margin-right: 8px;
-  opacity: 0.75;
+#nav-links {
+  padding-right: 50px;
+}
+
+.navbar-brand {
+  padding-left: 30px;
+  font-weight: bold;
+}
+
+.nav-item {
+  padding-right: 10px;
+  font-weight: bold;
 }
