@@ -15,9 +15,36 @@
     <!-- CSS Stylesheet -->
     <link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css">
 
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="static/css/plotlyStyle.css">
+
 </head>
 
 <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand">Trimet Transit System Analysis</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto" id="nav-links">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="dataSources.html">Data Sources</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="plotly.html">Charts</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="leaflet.html">Transit Map</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
     <div class="container">
 
@@ -66,7 +93,7 @@
         <!-- Div for Riders All Time Chart -->
         <div class="row">
             <div class="col-md-12">
- 
+
                 <div class="panel panel-primary">
                     <div class="panel-heading">
                         <h3 class="panel-title">Trimet Riders Over Time</h3>
