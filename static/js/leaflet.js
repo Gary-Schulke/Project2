@@ -89,7 +89,7 @@ d3.json(tmBoundaryURL, function (tmBoundaryData) {
 
             // Binding a Pop-Up to Each Marker
             onEachFeature: function (feature, layer) {
-                layer.bindPopup("<center><h3>" + feature.properties.MAPLABEL + "</h3></center>");
+                layer.bindPopup("<center><h6>" + feature.properties.MAPLABEL + "</h6></center>");
             }
 
         }).addTo(neighborhhodBoundaries);
@@ -207,9 +207,9 @@ d3.json(tmBoundaryURL, function (tmBoundaryData) {
 
             // Binding a Pop-Up to Each Marker
             onEachFeature: function (feature, layer) {
-                layer.bindPopup("<center><h3>" + feature.properties.stop_name + "</h3></center>" +
-                    "<center><h4>City: " + feature.properties.jurisdiction + ", " + feature.properties.zipcode + "</h4></center>" +
-                    "<center><hr><h4>Average Ridership by Quarter</h4></center>" +
+                layer.bindPopup("<center><h6>" + feature.properties.stop_name + "</h6></center>" +
+                    "<center><p>City: " + feature.properties.jurisdiction + ", " + feature.properties.zipcode + "</p></center>" +
+                    "<center><hr><p>Average Ridership by Quarter</p></center>" +
                     "<p>Spring 2018: " + feature.properties.spring2018 + "/day</p>" +
                     "<p>Fall 2018: " + feature.properties.fall2018 + "/day</p>" +
                     "<p>Spring 2019: " + feature.properties.spring2019 + "/day</p>" +
@@ -236,8 +236,8 @@ d3.json(tmBoundaryURL, function (tmBoundaryData) {
 
             // Binding a Pop-Up to Each Marker
             onEachFeature: function (feature, layer) {
-                layer.bindPopup("<center><h3>" + feature.properties.name + "</h3></center>" +
-                    "<center><h4>" + feature.properties.address + "</h4></center>" +
+                layer.bindPopup("<center><h6>" + feature.properties.name + "</h6></center>" +
+                    "<center><p>" + feature.properties.address + "</p></center>" +
                     "<hr><p>City: " + feature.properties.city + ", " + feature.properties.zipcode + "</p>" +
                     "<p>County: " + feature.properties.county + "</p>");
             }
@@ -263,8 +263,8 @@ d3.json(tmBoundaryURL, function (tmBoundaryData) {
 
             // Binding a Pop-Up to Each Marker
             onEachFeature: function (feature, layer) {
-                layer.bindPopup("<center><h3>" + feature.properties.name + "</h3></center>" +
-                    "<center><h4>" + feature.properties.address + "</h4></center>" +
+                layer.bindPopup("<center><h6>" + feature.properties.name + "</h6></center>" +
+                    "<center><p>" + feature.properties.address + "</p></center>" +
                     "<hr><p>City: " + feature.properties.city + ", " + feature.properties.zipcode + "</p>" +
                     "<p>County: " + feature.properties.county + "</p>" +
                     "<p>Parking Spaces: " + feature.properties.spaces + "</p>");
