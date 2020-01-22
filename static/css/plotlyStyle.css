@@ -1,4 +1,4 @@
-#nav-links {
+/* #nav-links {
     padding-right: 50px;
 }
 
@@ -15,4 +15,18 @@
 .navbar {
     border-bottom: solid;
     border-color: #000000;
+} */
+
+#color-scale {
+    margin-top: 10px;
+    margin-left: 5px;
+    font-size: 10px;
+}
+
+.chart-top {
+    margin-top: 30px;
+}
+
+.well select {
+    margin-bottom: 10px;
 }
