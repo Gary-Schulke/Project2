@@ -1,0 +1,81 @@
+,route_number,route_name,boarding_rides,rides_rev_hour,rides_veh_hour,cost_per_ride,passenger_miles,ave_trip_length,period
+12,1,Vermont,410,21.2,16.1,6.32,1352,390,Spring2018
+13,4,Division/Fessenden,"16,450",47.5,37.3,2.73,53816,"17,110",Spring2018
+14,6,Martin Luther King Jr Blvd,"5,950",43.4,33.7,3.02,15682,"5,820",Spring2018
+15,8,Jackson Park/NE 15th,"6,090",44.8,31.5,3.23,13031,"6,400",Spring2018
+16,9,Powell Blvd,"8,750",42.9,32.4,3.14,31139,"9,200",Spring2018
+17,10,Harold St,"2,360",29.7,23.9,4.25,7199,"2,320",Spring2018
+18,11,Rivergate/Marine Dr,160,14.3,9.5,10.73,897,160,Spring2018
+19,12,Barbur/Sandy Blvd,"8,200",43.0,32.0,3.18,29796,"8,410",Spring2018
+20,14,Hawthorne,"5,910",54.8,41.9,2.43,12297,"5,720",Spring2018
+21,15,Belmont/NW 23rd,"8,160",44.3,32.5,3.13,18728,"8,550",Spring2018
+22,16,Front Ave/St Helens Rd,770,21.3,15.0,6.77,4630,760,Spring2018
+23,17,Holgate/Broadway,"5,970",35.7,27.8,3.66,20780,"6,400",Spring2018
+24,18,Hillside,30,13.9,13.9,7.33,48,30,Spring2018
+25,19,Woodstock/Glisan,"6,020",34.8,27.7,3.67,19646,"6,310",Spring2018
+26,20,Burnside/Stark,"11,020",45.8,36.0,2.83,40566,"11,250",Spring2018
+27,21,Sandy Blvd/223rd,"2,070",32.3,21.0,4.84,7169,"2,060",Spring2018
+28,22,Parkrose,560,32.1,23.0,4.42,814,560,Spring2018
+29,23,San Rafael,140,20.0,12.4,8.18,302,140,Spring2018
+30,24,Fremont,500,19.3,14.3,7.11,1238,530,Spring2018
+31,25,Glisan/Rockwood,160,22.6,15.5,6.56,332,190,Spring2018
+32,29,Lake/Webster Rd,230,18.9,15.4,6.62,747,220,Spring2018
+33,30,Estacada,580,16.0,10.5,9.67,5720,590,Spring2018
+34,32,Oatfield,600,14.6,11.0,9.27,2286,620,Spring2018
+35,33,McLoughlin/King Rd,"5,100",34.7,25.4,4.00,21552,"5,090",Spring2018
+36,34,Linwood/River Rd,520,12.6,9.7,10.48,2301,530,Spring2018
+37,35,Macadam/Greeley,"3,800",32.7,24.7,4.11,20810,"3,870",Spring2018
+38,36,South Shore,210,20.2,11.9,8.54,939,190,Spring2018
+39,37,Lake Grove,80,19.5,12.7,8.01,269,90,Spring2018
+40,38,Boones Ferry Rd,410,20.0,13.0,7.84,2620,400,Spring2018
+49,39,Lewis & Clark,150,15.8,11.1,9.18,345,150,Spring2018
+51,43,Taylors Ferry Rd,310,14.4,10.8,9.38,1275,310,Spring2018
+52,44,Capitol Hwy/Mocks Crest,"4,650",35.9,25.6,3.98,18148,"4,540",Spring2018
+53,45,Garden Home,"1,040",23.5,17.9,5.69,4949,"1,110",Spring2018
+54,46,North Hillsboro,200,16.9,12.7,8.03,552,220,Spring2018
+55,47,Main/Evergreen,"1,010",18.9,13.8,7.34,4499,"1,060",Spring2018
+56,48,Cornell,"1,770",32.9,22.4,4.54,7077,"1,900",Spring2018
+57,50,Cedar Mill,80,15.3,9.8,10.41,331,80,Spring2018
+58,51,Vista,320,22.6,14.9,6.84,631,330,Spring2018
+59,52,Farmington/185th,"4,280",47.0,33.5,3.04,12908,"4,130",Spring2018
+60,53,Arctic/Allen,200,47.4,28.0,3.63,424,210,Spring2018
+61,54,Beaverton-Hillsdale Hwy,"2,450",46.3,35.7,2.85,8483,"2,510",Spring2018
+62,55,Hamilton,70,27.6,14.0,7.26,301,70,Spring2018
+63,56,Scholls Ferry Rd,"1,860",37.0,28.3,3.60,8178,"2,040",Spring2018
+64,57,TV Hwy/Forest Grove,"7,120",47.7,35.3,2.88,31448,"7,420",Spring2018
+65,58,Canyon Rd,"1,060",37.5,26.4,3.85,3958,"1,190",Spring2018
+66,59,Walker/Park Way,90,19.9,13.7,7.42,296,80,Spring2018
+67,61,Marquam Hill/Beaverton,520,57.5,29.3,3.47,3522,500,Spring2018
+68,62,Murray Blvd,"2,310",38.8,28.6,3.55,8660,"2,390",Spring2018
+69,63,Washington Park/Arlington Hts,120,17.2,10.1,10.06,200,100,Spring2018
+70,64,Marquam Hill/Tigard,400,48.4,25.0,4.07,2157,400,Spring2018
+71,65,Marquam Hill/Barbur Blvd,150,36.2,18.2,5.59,509,160,Spring2018
+72,66,Marquam Hill/Hollywood,440,42.2,23.0,4.42,1887,490,Spring2018
+73,67,Bethany/158th,680,29.1,21.2,4.79,1986,780,Spring2018
+74,68,Marquam Hill/Collins Circle,460,49.3,20.6,4.95,910,450,Spring2018
+75,70,12th/NE 33rd Ave,"3,220",29.1,21.5,4.73,9171,"3,370",Spring2018
+76,71,60th Ave,"3,750",34.2,25.7,3.95,11755,"3,410",Spring2018
+77,72,Killingsworth/82nd Ave,"14,740",52.1,40.1,2.54,39358,"15,350",Spring2018
+78,73,122nd Ave,"4,170",51.7,35.8,2.84,8813,"4,220",Spring2018
+80,75,Cesar Chavez/Lombard,"8,820",38.4,30.2,3.37,27524,"9,070",Spring2018
+81,76,Beaverton/Tualatin,"2,500",42.1,31.5,3.23,9415,"2,690",Spring2018
+82,77,Broadway/Halsey,"5,530",35.0,27.0,3.77,17602,"5,350",Spring2018
+83,78,Beaverton/Lake Oswego,"2,460",38.2,27.8,3.65,9388,"2,610",Spring2018
+84,79,Clackamas/Oregon City,"1,020",30.1,19.9,5.11,4384,"1,030",Spring2018
+85,80,Kane/Troutdale Rd,270,23.3,16.9,6.02,745,280,Spring2018
+86,81,Kane/257th,230,23.1,17.6,5.78,594,270,Spring2018
+96,84,Powell Valley/Orient Dr,80,17.2,10.4,9.82,322,90,Spring2018
+97,85,Swan Island,410,27.1,19.0,5.36,1086,430,Spring2018
+98,87,Airport Way/181st,900,25.6,17.0,5.99,2853,990,Spring2018
+99,88,Hart/198th,"1,630",36.3,24.8,4.10,5854,"1,730",Spring2018
+100,92,South Beaverton Express,380,30.4,18.7,5.42,3467,390,Spring2018
+101,93,Tigard/Sherwood,630,21.8,13.3,7.67,1805,620,Spring2018
+102,94,Pacific Hwy/Sherwood,"2,310",32.3,21.0,4.84,14135,"2,330",Spring2018
+103,96,Tualatin/I-5,"1,070",25.8,15.8,6.42,8462,"1,150",Spring2018
+104,97,Tualatin-Sherwood Rd,90,10.9,5.5,18.53,177,70,Spring2018
+105,99,Macadam/McLoughlin,720,17.4,12.2,8.32,3429,700,Spring2018
+106,152,Milwaukie,180,10.0,6.1,16.76,490,220,Spring2018
+107,154,Willamette/Clackamas Heights,130,14.4,9.1,11.14,337,140,Spring2018
+108,155,Sunnyside,580,25.0,16.5,6.15,1567,570,Spring2018
+109,156,Mather Rd,200,18.5,13.9,7.31,815,200,Spring2018
+110,291,Orange Night Bus,30,32.6,24.6,4.13,106,30,Spring2018
