@@ -9,8 +9,8 @@ const URLS2018 = `./static/data/route_ridership_report_sorted_by_route_weekdaySp
 const URLF2018 = `./static/data/route_ridership_report_sorted_by_route_weekdayFall2018.json`;
 const URLS2019 = `./static/data/route_ridership_report_sorted_by_route_weekdaySpring2019.json`;
 const URLF2019 = `./static/data/route_ridership_report_sorted_by_route_weekdayFall2019.json`;
-const DIVTAG = 'bar';
-const PULLDOWNID = '#selDataset2'
+const DIVTAG = 'scatter';
+const PULLDOWNID = '#selDataset3'
 const S2018 = 0, F2018 = 1, S2019 = 2, F2019 = 3;
 const LBLS = {'0': 'Spring 2018', '1': 'Fall 2018', '2': 'Spring 2019', '3': 'Fall 2019'};
 // Variables
@@ -42,7 +42,7 @@ function readData() {
 };    // End readData()
 
 // The event handler for the Test Subject ID pulldown menu.
-function optionChanged(optionValue) {
+function periodChanged(optionValue) {
   const id_idx = parseInt(optionValue);
   updateScatterPlot(id_idx);
 };
@@ -136,13 +136,20 @@ function buildBarChart() {
   };
 
   let aT = createAccentTrace(S2018);
-  traceList.push([traceS2018, aT]);
+  let mT = createMedianTrace(S2018);
+  traceList.push([traceS2018, aT, mT]);
+
   aT = createAccentTrace(F2018);
-  traceList.push([traceF2018, aT]);
+  mT = createMedianTrace(F2018);
+  traceList.push([traceF2018, aT, mT]);
+
   aT = createAccentTrace(S2019);
-  traceList.push([traceS2019, aT]);
+  mT = createMedianTrace(S2019);
+  traceList.push([traceS2019, aT, mT]);
+
   aT = createAccentTrace(F2019);
-  traceList.push([traceF2019, aT]);
+  mT = createMedianTrace(F2019);
+  traceList.push([traceF2019, aT, mT]);
 
   let heading = getVariableHeading(defaultTraceSelection);
   let layout = generateLayout(heading);
@@ -217,6 +224,34 @@ function createAccentTrace(showPeriod) {
   return accentTrace;
 };
 
+// Creates the trace showing median of cost and ride.
+// showPeriod (int) - one of the constants defined above 0 - 3.
+// returns a Plotly trace dictionary.
+function createMedianTrace(showPeriod) {
+  // Get the minimum and maximum entries based on cost per ride.
+  // This trace will display as a different color. Probably green.
+  let costLst = routeDataList[showPeriod].map(each => each.cost_per_ride);
+  let rideLst = routeDataList[showPeriod].map(each => each.boarding_rides);
+  let medCost = d3.median(costLst);
+  let medRide = d3.median(rideLst)
+
+  // Assemble the trace data and labels
+  let traceXData = [medCost];
+  let traceYData = [medRide];
+  let xAxisFlyoverList = [
+    "Median Cost " + medCost + "<br>" + "Median Ride " + medRide];
+
+  var accentTrace = {
+    x: traceXData,
+    y: traceYData,
+    mode: 'markers',
+    type: 'scatter',
+    name: 'Median',
+    text: xAxisFlyoverList,
+    marker: { size: 12 }
+  };
+  return accentTrace;
+};
 // Removes comma from numerical strings.
 // data - the json array
 // returns - the json array with commas removed and converted to int or float.

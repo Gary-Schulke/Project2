@@ -92,6 +92,23 @@
                 <div id="line"></div>
             </div>
         </div>
+        <div class="row chart-top">
+            <div class="col-md-12">
+
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Cost Per Ride</h3>
+                    </div>
+                    <div class="well">
+                        <select id="selDataset3" onchange="periodChanged(this.value)">Select Year</select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div id="scatter"></div>
+            </div>
+        </div>
     </div>
 
     <!-- Bootstrap JavaScript -->
@@ -115,7 +132,7 @@
 
     <!-- Our JavaScript -->
     <script src="static/js/plotly.js"></script>
-
+    <script src="static/js/plotlyRoutes.js"></script>
 </body>
 
 </html>
