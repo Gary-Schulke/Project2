@@ -1,6 +1,6 @@
 //Capture file path for JSON file
-var jsonRider = '/static/data/monthly_rider_data.json';
-var jsonWeather = '/static/data/final_weather_data.json';
+var jsonRider = './static/data/monthly_rider_data.json';
+var jsonWeather = './static/data/final_weather_data.json';
 
 //Declare variables of the function that need to live outside of the for loop
 var allMonths = [];
