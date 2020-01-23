@@ -6,6 +6,9 @@ var jsonWeather = '/static/data/final_weather_data.json';
 var allMonths = [];
 var allDates = [];
 var allYears = [2017, 2018, 2019];
+var vehicle = "Bus"
+var allVehicles = ["Bus", "MAX", "WES"]
+var allRiders;
 var allBus = [];
 var allMax = [];
 var allWes = [];
@@ -60,6 +63,39 @@ d3.select("#color-scale").selectAll('div')
     .text(d => d)
     .style('font-size', "10px")
     .style('color', '#fff')
+
+//Create function for building the scatter plot
+function buildScatterPlot() {
+    var scatterTrace = {
+        x: allPrecip,
+        y: allRiders,
+        mode: 'markers',
+        name: `${vehicle} Ridership`,
+        text: allDates,
+        marker: {
+            color: '#008cba',
+            size: 12,
+        },
+        type: 'scatter'
+    };
+
+    var scatterData = [scatterTrace];
+
+    var scatterLayout = {
+        title: 'Ridership & Precipitation',
+        xaxis: {
+            title: 'Monthly Precipitation',
+            showgrid: false,
+            zeroline: false
+        },
+        yaxis: {
+            title: 'Monthly Riders',
+            showline: false
+        }
+    };
+
+    Plotly.newPlot('scatter1', scatterData, scatterLayout);
+};
 
 //Create function for building the monthly charts
 function buildMonthlyCharts() {
@@ -226,6 +262,11 @@ function getInitialData() {
                 };
             };
 
+            allRiders = allBus;
+
+            //Add Months to dropdown menu
+            var dropDownVehicles = allVehicles.forEach(d => d3.select("#selDataset4").append("option").attr("value", d).text(d));
+
             //Add Months to dropdown menu
             var dropDownMonths = allMonths.slice(0, 12).forEach(d => d3.select("#selDataset1").append("option").attr("value", d).text(d));
 
@@ -235,6 +276,7 @@ function getInitialData() {
             //Call functions to build the charts
             buildMonthlyCharts();
             buildYearlyChart();
+            buildScatterPlot();
         });
     });
 };
@@ -310,8 +352,19 @@ function yearChanged() {
         });
     });
 };
-console.log(allDates);
-console.log(allBus);
-console.log(allMax);
-console.log(allWes);
-console.log(allPrecip);
+
+//Handle the change for year selection
+function vehicleChanged() {
+    vehicle = document.getElementById("selDataset4").value;
+    console.log(vehicle)
+    if (vehicle == "MAX") {
+        allRiders = allMax;
+    }
+    else if (vehicle == "WES") {
+        allRiders = allWes;
+    }
+    else {
+        allRiders = allBus
+    };
+    buildScatterPlot();
+};
