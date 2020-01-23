@@ -9,7 +9,7 @@ const URLS2018 = `./static/data/route_ridership_report_sorted_by_route_weekdaySp
 const URLF2018 = `./static/data/route_ridership_report_sorted_by_route_weekdayFall2018.json`;
 const URLS2019 = `./static/data/route_ridership_report_sorted_by_route_weekdaySpring2019.json`;
 const URLF2019 = `./static/data/route_ridership_report_sorted_by_route_weekdayFall2019.json`;
-const DIVTAG = 'scatter';
+const DIVTAG = 'scatter2';
 const PULLDOWNID = '#selDataset3'
 const S2018 = 0, F2018 = 1, S2019 = 2, F2019 = 3;
 const LBLS = {'0': 'Spring 2018', '1': 'Fall 2018', '2': 'Spring 2019', '3': 'Fall 2019'};
