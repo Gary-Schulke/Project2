@@ -32,14 +32,14 @@
 
 <body>
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-success">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <a class="navbar-brand">Transit Map</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
       aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav ml-auto" id="nav-links">
+      <ul class="navbar-nav" id="nav-links">
         <li class="nav-item active">
           <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
         </li>
@@ -49,8 +49,15 @@
         <li class="nav-item active">
           <a class="nav-link" href="plotly.html">Charts</a>
         </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="leaflet.html">Transit Map</a>
+        <li class="nav-item active dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Maps
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="leaflet.html">Transit Map</a>
+            <a class="dropdown-item" href="transitHeatmap.html">Heatmap</a>
+          </div>
         </li>
       </ul>
     </div>
@@ -78,6 +85,9 @@
 
   <!-- Leaflet MakiMarkers JavaScript -->
   <script src="static/js/Leaflet.MakiMarkers.js"></script>
+
+  <!-- Leaflet heatmap plugin-->
+  <script type="text/javascript" src="static/js/leaflet-heat.js"></script>
 
   <!-- Leaflet Marker Cluster JavaScript -->
   <script type="text/javascript"
