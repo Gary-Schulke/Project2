@@ -177,6 +177,7 @@ d3.json(tmBoundaryURL, function (tmBoundaryData) {
 
     legend.onAdd = function () {
         var div = L.DomUtil.create('div', 'info legend');
+        div.innerHTML += '<img src="static/icons/max_stop.png">' + ' MAX/WES Stations' + '<br>'
         div.innerHTML += '<img src="static/icons/streetcar_stop.png">' + ' Streetcar Stops' + '<br>'
         div.innerHTML += '<img src="static/icons/bus_streetcar_stop.png">' + ' Bus/Streetcar Stops' + '<br>'
         div.innerHTML += '<img src="static/icons/tram_stop.png">' + ' Aerial Tram Stops' + '<br>'
