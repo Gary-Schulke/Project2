@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Portland Transit Trends</title>
+    <title>Trimet Transit System Analysis</title>
 
     <!-- Bootstrap CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -28,7 +28,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav ml-auto" id="nav-links">
+            <ul class="navbar-nav" id="nav-links">
                 <li class="nav-item active">
                     <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
                 </li>
@@ -38,8 +38,15 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="plotly.html">Charts</a>
                 </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="leaflet.html">Transit Map</a>
+                <li class="nav-item active dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Maps
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="leaflet.html">Transit Map</a>
+                        <a class="dropdown-item" href="transitHeatmap.html">Transit Heatmap</a>
+                    </div>
                 </li>
             </ul>
         </div>
@@ -103,6 +110,33 @@
                 <div id="line"></div>
             </div>
         </div>
+        <div class="row chart-top">
+            <div class="col-md-12">
+
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Cost Per Ride</h3>
+                    </div>
+                    <div class="well">
+                        <select id="selDataset3" onchange="periodChanged(this.value)">Select Year</select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div id="scatter2"></div>
+            </div>
+        </div>
+        <div class="row chart-top">
+            <div class="col-md-12">
+
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"></h3>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Bootstrap JavaScript -->
@@ -126,7 +160,7 @@
 
     <!-- Our JavaScript -->
     <script src="static/js/plotly.js"></script>
-
+    <script src="static/js/plotlyRoutes.js"></script>
 </body>
 
 </html>

@@ -29,7 +29,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav ml-auto" id="nav-links">
+            <ul class="navbar-nav" id="nav-links">
                 <li class="nav-item active">
                     <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
                 </li>
@@ -39,8 +39,15 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="plotly.html">Charts</a>
                 </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="leaflet.html">Transit Map</a>
+                <li class="nav-item active dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Maps
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="leaflet.html">Transit Map</a>
+                        <a class="dropdown-item" href="transitHeatmap.html">Transit Heatmap</a>
+                    </div>
                 </li>
             </ul>
         </div>
@@ -73,9 +80,21 @@
             </div>
             <div class="col-12">
                 <a class="text-center nav-link"
+                    href="https://trimet.org/about/pdf/census/2018spring/route_stop_level_passenger_census_report_(weekday).pdf"
+                    target="_blank">Spring
+                    2018: Route Level Passenger Census</a>
+            </div>
+            <div class="col-12">
+                <a class="text-center nav-link"
                     href="https://trimet.org/about/pdf/census/2018fall/stop_level_passenger_census_sorted_by_location_id_(weekday).pdf"
                     target="_blank">Fall
                     2018: Stop Level Passenger Census</a>
+            </div>
+            <div class="col-12">
+                <a class="text-center nav-link"
+                    href="https://trimet.org/about/pdf/census/2018fall/route_stop_level_passenger_census_report_(weekday).pdf"
+                    target="_blank">Fall
+                    2018: Route Level Passenger Census</a>
             </div>
             <div class="col-12">
                 <a class="text-center nav-link"
@@ -85,9 +104,21 @@
             </div>
             <div class="col-12">
                 <a class="text-center nav-link"
+                    href="https://trimet.org/about/pdf/census/2019spring/route_stop_level_passenger_census_report_(weekday).pdf"
+                    target="_blank">Spring
+                    2019: Route Level Passenger Census</a>
+            </div>
+            <div class="col-12">
+                <a class="text-center nav-link"
                     href="https://trimet.org/about/pdf/census/2019fall/stop_level_passenger_census_sorted_by_location_id_(weekday).pdf"
                     target="_blank">Fall
                     2019: Stop Level Passenger Census</a>
+            </div>
+            <div class="col-12">
+                <a class="text-center nav-link"
+                    href="https://trimet.org/about/pdf/census/2019fall/route_stop_level_passenger_census_report_(weekday).pdf"
+                    target="_blank">Fall
+                    2019: Route Level Passenger Census</a>
             </div>
         </div>
         <div class="row">

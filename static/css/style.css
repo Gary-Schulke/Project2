@@ -1,15 +1,9 @@
-#nav-links {
-    padding-right: 50px;
+body {
+    margin-bottom: 50px;
 }
 
 .navbar-brand {
-    padding-left: 30px;
-    font-weight: bold;
-}
-
-.nav-item {
-    padding-right: 10px;
-    font-weight: bold;
+    padding-right: 30px;
 }
 
 .navbar {
