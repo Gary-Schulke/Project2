@@ -1,12 +1,3 @@
-.navbar-brand {
-    padding-right: 30px;
-}
-
-.navbar {
-    border-bottom: solid;
-    border-color: #000000;
-}
-
 #color-scale {
     margin-top: 10px;
     margin-left: 5px;
@@ -19,4 +10,13 @@
 
 .well select {
     margin-bottom: 10px;
+}
+
+.navbar-brand {
+    padding-right: 30px;
+}
+
+.navbar {
+    border-bottom: solid;
+    border-color: #000000;
 }
