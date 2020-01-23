@@ -283,14 +283,14 @@ function yearChanged() {
     d3.json(jsonWeather).then(function (d) {
 
         for (var i = 0; i < d.data.length; i++) {
-            if (d.data[i].year === newYear) {
+            if (d.data[i].year == newYear) {
                 selectedYearTotPrecip.push(d.data[i].total_precip);
             };
         };
 
         d3.json(jsonRider).then(function (d) {
             for (var i = 0; i < d.data.length; i++) {
-                if (d.data[i].year === newYear) {
+                if (d.data[i].year == newYear) {
                     selectedYearDates.push(d.data[i].date);
                     selectedYearBus.push(d.data[i].bus);
                     selectedYearMax.push(d.data[i].max);
@@ -298,6 +298,7 @@ function yearChanged() {
                 };
             };
             buildYearlyChart();
+            console.log(selectedYearBus);
         });
     });
 };
