@@ -4,7 +4,7 @@ var neighborhoodBoundariesURL = "static/data/neighborhoods.geojson";
 var tmRailBusRoutesURL = "static/data/tm_routes.json";
 var tmRailBusStopsURL = "static/data/tm_stops.json";
 var tmTransitCentersURL = "static/data/tm_tran_cen.json";
-var tmParkRideURL = "static/data/tm_parkride.json"
+var tmParkRideURL = "static/data/tm_parkride.json";
 
 // Mapbox API Key For Maki Markers
 L.MakiMarkers.accessToken = API_KEY;
@@ -93,9 +93,6 @@ d3.json(tmBoundaryURL, function (tmBoundaryData) {
             }
 
         }).addTo(neighborhhodBoundaries);
-
-        // Add Neighborhood Boundaries Layer to Map
-        // neighborhhodBoundaries.addTo(myMap);
     });
 
     // Create a Trimet Rail/Bus Routes Layer
@@ -241,11 +238,8 @@ d3.json(tmBoundaryURL, function (tmBoundaryData) {
                     "<hr><p>City: " + feature.properties.city + ", " + feature.properties.zipcode + "</p>" +
                     "<p>County: " + feature.properties.county + "</p>");
             }
-        
-        }).addTo(trimetTransitCenters);
 
-        // Add Transit Centers Layer to Map
-        trimetTransitCenters.addTo(myMap);
+        }).addTo(trimetTransitCenters);
     });
 
     // Create a Trimet Park & Ride Layer
@@ -269,11 +263,8 @@ d3.json(tmBoundaryURL, function (tmBoundaryData) {
                     "<p>County: " + feature.properties.county + "</p>" +
                     "<p>Parking Spaces: " + feature.properties.spaces + "</p>");
             }
-        
-        }).addTo(trimetParkRide);
 
-        // Add Park & Ride Layer to Map
-        trimetParkRide.addTo(myMap);
+        }).addTo(trimetParkRide);
     });
 
     // Create Legend & Add Inner HTML Div For Each Element/Layer on Map
