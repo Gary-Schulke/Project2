@@ -1,10 +1,15 @@
 //Capture file path for JSON file
-var jsonRider = '/Project2/static/data/monthly_rider_data.json';
-var jsonWeather = '/Project2/static/data/final_weather_data.json';
+var jsonRider = '/static/data/monthly_rider_data.json';
+var jsonWeather = '/static/data/final_weather_data.json';
 
 //Declare variables of the function that need to live outside of the for loop
 var allMonths = [];
+var allDates = [];
 var allYears = [2017, 2018, 2019];
+var allBus = [];
+var allMax = [];
+var allWes = [];
+var allPrecip = [];
 var selectedMonth = "Jan";
 var selectedMonthYear = [];
 var selectedMonthBus = [];
@@ -186,8 +191,9 @@ function getInitialData() {
 
     //Read JSON file, then push all data needed into above variables
     d3.json(jsonWeather).then(function (d) {
-
         for (var i = 0; i < d.data.length; i++) {
+            allPrecip.push(d.data[i].total_precip)
+
             if (d.data[i].month === selectedMonth) {
                 selectedMonthTotPrecip.push(d.data[i].total_precip);
                 selectedMonthPrecipColors.push(getColor(d.data[i].total_precip));
@@ -196,13 +202,15 @@ function getInitialData() {
                 selectedYearTotPrecip.push(d.data[i].total_precip);
             };
         };
-        console.log(selectedMonthTotPrecip);
-        console.log(selectedYearTotPrecip);
 
         d3.json(jsonRider).then(function (d) {
             for (var i = 0; i < d.data.length; i++) {
 
                 allMonths.push(d.data[i].month);
+                allDates.push(d.data[i].date);
+                allBus.push(d.data[i].bus);
+                allMax.push(d.data[i].max);
+                allWes.push(d.data[i].wes);
 
                 if (d.data[i].month === selectedMonth) {
                     selectedMonthYear.push(d.data[i].year);
@@ -302,3 +310,8 @@ function yearChanged() {
         });
     });
 };
+console.log(allDates);
+console.log(allBus);
+console.log(allMax);
+console.log(allWes);
+console.log(allPrecip);
