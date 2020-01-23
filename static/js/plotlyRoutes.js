@@ -47,6 +47,18 @@ function periodChanged(optionValue) {
   updateScatterPlot(id_idx);
 };
 
+/* function yearChanged(optionValue){
+  console.log("yearChanged: " + optionValue);
+  let id_idx = 0;
+  if (optionValue == 2018){
+    updateScatterPlot(F2018);
+  }
+  else if (optionValue == 2019){
+    updateScatterPlot(F2019);
+  };
+
+}; */
+
 // Gets all the Subject Ids and assigns the index.
 // The .json file is sorted the same for namd, samples and metadata fields.
 function initializeIDPulldown() {
