@@ -1,5 +1,5 @@
 /* Bootcamp Project 2
-   Author: Gary Schulke
+   Team Scrape & Show: Gary Schulke, Tabor Webb, Lindsey McKenna
    Date: January 23, 2019
    Note: For local operation run the Python local file server. "python3 -m http.server"
 */
