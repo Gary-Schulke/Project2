@@ -13,8 +13,9 @@ const DIVTAG = 'scatter2';
 const PULLDOWNID = '#selDataset3'
 const S2018 = 0, F2018 = 1, S2019 = 2, F2019 = 3;
 const LBLS = {'0': 'Spring 2018', '1': 'Fall 2018', '2': 'Spring 2019', '3': 'Fall 2019'};
+
 // Variables
-var defaultTraceSelection = S2018;
+const defaultTraceSelection = S2018;
 var traceList = [];
 var routeDataList = [];
 
@@ -47,32 +48,24 @@ function periodChanged(optionValue) {
   updateScatterPlot(id_idx);
 };
 
-/* function yearChanged(optionValue){
-  console.log("yearChanged: " + optionValue);
-  let id_idx = 0;
-  if (optionValue == 2018){
-    updateScatterPlot(F2018);
-  }
-  else if (optionValue == 2019){
-    updateScatterPlot(F2019);
-  };
-
-}; */
-
 // Gets all the Subject Ids and assigns the index.
 // The .json file is sorted the same for namd, samples and metadata fields.
 function initializeIDPulldown() {
   let selPeriod = d3.select(PULLDOWNID);
-  let option = selPeriod.append("option");
-
+  let option;
+  
+  option = selPeriod.append("option");
   option.property("text", "Spring 2018");
   option.property("value", S2018);
+
   option = selPeriod.append("option");
   option.property("text", "Fall 2018");
   option.property("value", F2018);
+
   option = selPeriod.append("option");
   option.property("text", "Spring 2019");
   option.property("value", S2019);
+
   option = selPeriod.append("option");
   option.property("text", "Fall 2019");
   option.property("value", F2019);
@@ -115,7 +108,7 @@ function buildBarChart() {
     opacity: 1
   };
 
-  var traceF2018 = {
+  let traceF2018 = {
     x: costPerRideList[F2018],
     y: boardingRidesList[F2018],
     mode: 'markers',
@@ -125,7 +118,7 @@ function buildBarChart() {
     marker: { size: 8 },
     opacity: 1
   };
-  var traceS2019 = {
+  let traceS2019 = {
     x: costPerRideList[S2019],
     y: boardingRidesList[S2019],
     mode: 'markers',
@@ -136,7 +129,7 @@ function buildBarChart() {
     opacity: 1
   };
 
-  var traceF2019 = {
+  let traceF2019 = {
     x: costPerRideList[F2019],
     y: boardingRidesList[F2019],
     mode: 'markers',
@@ -195,8 +188,12 @@ function getVariableHeading(showPeriod) {
 // returns a Plotly layout dictionary.
 function generateLayout(label) {
   let lay = {
-    title: { text: `Rides vs Cost<br>${label}`, font: { size: 24 } },
-    xaxis: { title: { text: `$ Cost Per Ride $`, font: { size: 24 } } },
+    title: { text: `Cost vs Rides<br>${label}`, font: { size: 24 } },
+    xaxis: {
+      title: { text: `Cost per Ride `, font: { size: 24 } },
+      tickprefix: '$',
+      color: 'black'
+    },
     yaxis: { title: { text: `Boarding Rides`, font: { size: 24 } } },
     margin: { l: 100, r: 100, t: 100, b: 100 },
     showlegend: true
@@ -224,18 +221,18 @@ function createAccentTrace(showPeriod) {
     "Route " + minCost.route_number,
     "Route " + maxCost.route_number];
 
-  var accentTrace = {
+  let accentTrace = {
     x: traceXData,
     y: traceYData,
     mode: 'markers',
     type: 'scatter',
     name: 'Highest/Lowest',
     text: xAxisFlyoverList,
-    marker: { size: 10 }
+    marker: { size: 10 },
   };
   return accentTrace;
 };
-
+// tickvals, ticktext
 // Creates the trace showing median of cost and ride.
 // showPeriod (int) - one of the constants defined above 0 - 3.
 // returns a Plotly trace dictionary.
@@ -253,7 +250,7 @@ function createMedianTrace(showPeriod) {
   let xAxisFlyoverList = [
     "Median Cost " + medCost + "<br>" + "Median Ride " + medRide];
 
-  var accentTrace = {
+  let accentTrace = {
     x: traceXData,
     y: traceYData,
     mode: 'markers',
