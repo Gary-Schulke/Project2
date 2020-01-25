@@ -168,7 +168,7 @@ d3.json(tmBoundaryURL, function (tmBoundaryData) {
         var heat = new L.heatLayer(data, {
             radius: 30,
             blur: 15,
-            max: 200
+            max: 250
         }).addTo(myMap);
     });
 
