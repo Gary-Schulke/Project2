@@ -55,29 +55,29 @@
     <div class="container">
         <!-- Div for scatter plot -->
         <div class="row chart-top">
-                <div class="col-md-12">
-    
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">TriMet Riders v. Precipitation</h3>
-                        </div>
-                        <div class="well">
-                                <select id="selDataset4" onchange="vehicleChanged(this.value)"></select>
-                        </div>
+            <div class="col-md-12">
+
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">TriMet Riders & Precipitation by Transit Type</h3>
+                    </div>
+                    <div class="well">
+                        <select id="selDataset4" onchange="vehicleChanged(this.value)"></select>
                     </div>
                 </div>
-    
-                <div class="col-md-12">
-                    <div id="scatter1"></div>
-                </div>
             </div>
+
+            <div class="col-md-12">
+                <div id="scatter1"></div>
+            </div>
+        </div>
 
         <!-- Div for Riders by Month Chart -->
         <div class="row chart-top">
             <div class="col-md-12">
                 <div class="panel panel-primary">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Monthly TriMet Riders by Year</h3>
+                        <h3 class="panel-title">TriMet Riders & Precipitation by Month & Year</h3>
                     </div>
                     <div class="well">
                         <select id="selDataset1" onchange="monthChanged(this.value)"></select>
@@ -90,7 +90,8 @@
             <div class="col-md-4" id="bar-max"></div>
             <div class="col-md-4" id="bar-wes"></div>
         </div>
-        <div class="row " id="color-scale">Total Precipitation: </div>
+        <div class="row" id="color-scale">Total Precipitation:</div>
+        <div class="row bar-comment">(Bars colored using the above color scale. Precipitation is the total across the 6 measured cites)</div>
 
         <!-- Div for Riders All Time Chart -->
         <div class="row chart-top">
@@ -98,7 +99,7 @@
 
                 <div class="panel panel-primary">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Annual TriMet Riders</h3>
+                        <h3 class="panel-title">Yearly TriMet Riders & Precipitation</h3>
                     </div>
                     <div class="well">
                         <select id="selDataset2" onchange="yearChanged(this.value)">Select Year</select>
@@ -109,7 +110,10 @@
             <div class="col-md-12">
                 <div id="line"></div>
             </div>
+            <div class="row line-comment">(Radius of marker represents the total precipitation for the associated month. Precipitation is the total across the 6 measured cites)
+            </div>
         </div>
+        <!-- Div for Cost per Ride Plot -->
         <div class="row chart-top">
             <div class="col-md-12">
 
@@ -127,16 +131,7 @@
                 <div id="scatter2"></div>
             </div>
         </div>
-        <div class="row chart-top">
-            <div class="col-md-12">
-
-                <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        <h3 class="panel-title"></h3>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <div><br><br></div>
     </div>
 
     <!-- Bootstrap JavaScript -->
@@ -154,6 +149,7 @@
 
     <!-- D3 JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/simple-statistics/1.0.1/simple_statistics.min.js"></script>
 
     <!-- Plotly JavaScript -->
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
