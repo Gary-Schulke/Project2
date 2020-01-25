@@ -2,7 +2,7 @@
 var jsonRider = './static/data/monthly_rider_data.json';
 var jsonWeather = './static/data/final_weather_data.json';
 
-//Declare variables of the function that need to live outside of the for loop
+//Declare global variables for those that need to live outside of the functions
 var allMonths = [];
 var allDates = [];
 var allYears = [2017, 2018, 2019];
@@ -27,11 +27,11 @@ var selectedMonthTotPrecip = [];
 var selectedYearTotPrecip = [];
 var selectedMonthPrecipColors = [];
 
-//Variables for color scale
+//Create and define variables for color scale
 var colorScale = ['#CCF5CE', '#AFEEBE', '#92E7B5', '#75DFB3', '#57D7B8', '#3ACEC3', '#1DB5C4', '#008CBA', '#00499F', '#001382']
 var numericScale = ['0"-5"', '6"-10"', '11"-15"', '16"-20"', '21"-25"', '26"-30"', '31"-35"', '36"-40"', '41"-45"', '45"+']
 
-//Function for identifying where the total precipitation falls on the color scale
+//Create function for identifying where the total precipitation falls on the color scale
 function getColor(d) {
     return d > 45 ? colorScale[9] :
         d > 40 ? colorScale[8] :
@@ -45,7 +45,7 @@ function getColor(d) {
                                         colorScale[0]
 };
 
-//Add color scale
+//Add color scale to DOM
 d3.select("#color-scale").selectAll('div')
     .data(colorScale)
     .enter()
@@ -58,6 +58,7 @@ d3.select("#color-scale").selectAll('div')
     .style('display', 'inline-block')
     .style('background-color', (d => d))
 
+//Add associated numeric scale to DOM
 d3.select("#color-scale").selectAll('div')
     .data(numericScale)
     .text(d => d)
@@ -66,6 +67,7 @@ d3.select("#color-scale").selectAll('div')
 
 //Create function for building the scatter plot
 function buildScatterPlot() {
+
     var scatterTrace = {
         x: allPrecip,
         y: allRiders,
@@ -97,8 +99,8 @@ function buildScatterPlot() {
     Plotly.newPlot('scatter1', scatterData, scatterLayout);
 };
 
-//Create function for building the monthly charts
-function buildMonthlyCharts() {
+//Create function for building the bar charts
+function buildBarCharts() {
     //Define the coordinates for the bus chart and identify the chart type as bar
     var busBarTrace = {
         x: selectedMonthYear,
@@ -115,7 +117,9 @@ function buildMonthlyCharts() {
 
     //Add layout properties for the bus bar chart
     var busBarLayout = {
-        title: 'Monthly Bus Riders',
+        title: 'Bus Riders',
+        xaxis: { title: 'Year' },
+        yaxis: { title: 'Est. # of Riders' },
         autosize: false,
         width: 350,
         height: 350
@@ -140,7 +144,9 @@ function buildMonthlyCharts() {
 
     //Add layout properties for the MAX bar chart
     var maxBarLayout = {
-        title: 'Monthly MAX Riders',
+        title: 'MAX Riders',
+        xaxis: { title: 'Year' },
+        yaxis: { title: 'Est. # of Riders' },
         autosize: false,
         width: 350,
         height: 350
@@ -165,7 +171,9 @@ function buildMonthlyCharts() {
 
     //Add layout properties for the WES bar chart
     var wesBarLayout = {
-        title: 'Monthly WES Riders',
+        title: 'WES Riders',
+        xaxis: { title: 'Year' },
+        yaxis: { title: 'Est. # of Riders' },
         autosize: false,
         width: 350,
         height: 350
@@ -176,7 +184,7 @@ function buildMonthlyCharts() {
 };
 
 //Create function for building the annual chart
-function buildYearlyChart() {
+function buildLineChart() {
     //Define the coordinates for the yearly line chart and identify the chart type as line
     //Create the bus trace
     var traceBusLine = {
@@ -217,15 +225,21 @@ function buildYearlyChart() {
     //Store all traces for the yearly line chart
     var yearlyData = [traceBusLine, traceMaxLine, traceWesLine];
 
+    var lineLayout = {
+        title: 'Monthly TriMet Riders & Precipitation ',
+        xaxis: { title: 'Month' },
+        yaxis: { title: 'Est. # of Riders' },
+    };
+
     //Create the yearly line chart
-    Plotly.newPlot('line', yearlyData);
+    Plotly.newPlot('line', yearlyData, lineLayout);
 };
 
 
 //Create function for pulling the initial data and pushing it into the charts
 function getInitialData() {
 
-    //Read JSON file, then push all data needed into above variables
+    //Read the Weather JSON file, then push all data needed into above variables
     d3.json(jsonWeather).then(function (d) {
         for (var i = 0; i < d.data.length; i++) {
             allPrecip.push(d.data[i].total_precip)
@@ -238,7 +252,7 @@ function getInitialData() {
                 selectedYearTotPrecip.push(d.data[i].total_precip);
             };
         };
-
+        //Read the Rider JSON file, then push all data needed into above variables
         d3.json(jsonRider).then(function (d) {
             for (var i = 0; i < d.data.length; i++) {
 
@@ -261,7 +275,7 @@ function getInitialData() {
                     selectedYearWes.push(d.data[i].wes);
                 };
             };
-
+            //Set allRiders to bus riders for initial page load
             allRiders = allBus;
 
             //Add Months to dropdown menu
@@ -274,8 +288,8 @@ function getInitialData() {
             var dropDownYears = allYears.forEach(d => d3.select("#selDataset2").append("option").attr("value", d).text(d));
 
             //Call functions to build the charts
-            buildMonthlyCharts();
-            buildYearlyChart();
+            buildBarCharts();
+            buildLineChart();
             buildScatterPlot();
         });
     });
@@ -296,7 +310,7 @@ function monthChanged() {
     selectedMonthTotPrecip = [];
     selectedMonthPrecipColors = [];
 
-    //Read JSON file, then push all data needed into above variables
+    //Read Weather JSON file, then push all data needed into above variables
     d3.json(jsonWeather).then(function (d) {
 
         for (var i = 0; i < d.data.length; i++) {
@@ -306,6 +320,7 @@ function monthChanged() {
             };
         };
 
+        //Read Rider JSON file, then push all data needed into above variables
         d3.json(jsonRider).then(function (d) {
             for (var i = 0; i < d.data.length; i++) {
                 if (d.data[i].month === newMonth) {
@@ -315,7 +330,8 @@ function monthChanged() {
                     selectedMonthWes.push(d.data[i].wes);
                 };
             };
-            buildMonthlyCharts();
+            //Call the build bar charts function to update the charts
+            buildBarCharts();
         });
     });
 };
@@ -347,8 +363,9 @@ function yearChanged() {
                     selectedYearWes.push(d.data[i].wes);
                 };
             };
-            buildYearlyChart();
-            console.log(selectedYearBus);
+            
+            //Call the build line chart function to update the chart
+            buildLineChart();
         });
     });
 };
@@ -366,5 +383,6 @@ function vehicleChanged() {
     else {
         allRiders = allBus
     };
+    //Call the build scatter plot function to update the chart
     buildScatterPlot();
 };

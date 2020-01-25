@@ -1,6 +1,18 @@
 #color-scale {
-    margin-top: 10px;
-    margin-left: 5px;
+    padding-top: 5px;
+    padding-left: 15px;
+    font-size: 10px;
+}
+
+.bar-comment {
+    padding-top: 5px;
+    padding-left: 15px;
+    font-size: 10px;
+}
+
+.line-comment {
+    padding-top: 5px;
+    padding-left: 30px;
     font-size: 10px;
 }
 
