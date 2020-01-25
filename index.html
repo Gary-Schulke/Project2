@@ -23,7 +23,7 @@
 <body class="bg-secondary">
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a class="navbar-brand">Trimet Transit System Project Overview</a>
+        <a class="navbar-brand">TriMet Transit System Project Overview</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -72,15 +72,22 @@
         <div class="row">
             <div class="col-12">
                 <h4 class="text-left index-subheader1">Project Overview & Motivation:</h4>
-                <p>Our motivation for this project was to better understand Portlanders transit preferences in relation to different types of weather. 
-                    Specifically we wanted to look at how high levels of precipitation impacted TriMet transit system ridership in relation to rideshare users.
-                    Our hypothesis was that we would see a slight decline in TriMet bus ridership and a corresponding increase in the number of rideshare users.
-                    Unfortunately, the City of Portland does not require rideshare companies to publicly disclose any of their internal data, so we were not able to 
+                <p>Our motivation for this project was to better understand Portlanders transit preferences in relation
+                    to different types of weather.
+                    Specifically we wanted to look at how high levels of precipitation impacted TriMet transit system
+                    ridership in relation to rideshare users.
+                    Our hypothesis was that we would see a slight decline in TriMet bus ridership and a corresponding
+                    increase in the number of rideshare users.
+                    Unfortunately, the City of Portland does not require rideshare companies to publicly disclose any of
+                    their internal data, so we were not able to
                     include rideshare user data as a part of our project.
                 </p>
-                <p>Instead, through a multiangle analysis of the Trimet transit system we explored if and how precipitation impacts ridership within the MAX, WES, and Bus systems 
-                    on a month-to-month and year-to-year basis, as well as a brief exploration of the cost per boarding passenger to identify strengths and weaknesses throughout 
-                    the TriMet transit system. Additionally, we created two transit system maps designed to enable users to explore the geography of the TriMet transit system and 
+                <p>Instead, through a multiangle analysis of the Trimet transit system we explored if and how
+                    precipitation impacts ridership within the MAX, WES, and Bus systems
+                    on a month-to-month and year-to-year basis, as well as a brief exploration of the cost per boarding
+                    passenger to identify strengths and weaknesses throughout
+                    the TriMet transit system. Additionally, we created two transit system maps designed to enable users
+                    to explore the geography of the TriMet transit system and
                     how ridership varies from neighborhood to neighborhood and city to city.
                 </p>
             </div>
@@ -89,12 +96,14 @@
             <div class="col-12">
                 <h4 class="text-left index-subheader2">Data Description:</h4>
                 <ul class="data-list">
-                    <li>Trimet performance monthly data from January 2017 to December 2019 (PDF File)</li>
-                    <li>Trimet stop and route level passenger census from Spring Quarter 2018, Fall Quarter 2018, Spring
+                    <li>TriMet performance monthly data from January 2017 to December 2019 (PDF File)</li>
+                    <li>TriMet stop and route level passenger census from Spring Quarter 2018, Fall Quarter 2018, Spring
                         Quarter 2019, and Fall Quarter 2019 (8 PDF Files)</li>
-                    <li>Trimet geospatial data for Trimet service area boundaries, rail lines (MAX, WES & Streetcar), rail
+                    <li>TriMet geospatial data for TriMet service area boundaries, rail lines (MAX, WES & Streetcar),
+                        rail
                         stops (MAX, WES & Streetcar), bus routes,
-                        bus stops, tram line, tram stops, Trimet transit centers, and Park & Ride locations (8 KML Files)
+                        bus stops, tram line, tram stops, TriMet transit centers, and Park & Ride locations (8 KML
+                        Files)
                     </li>
                     <li>OpenWeather historical weather data from January 1, 2017 to December 31, 2019 for the cities of
                         Portland, Hillsboro, Beaverton, Gresham,
@@ -109,6 +118,29 @@
         <div class="row">
             <div class="col-12">
                 <h4 class="text-left index-subheader2">Data Analysis:</h4>
+                <p>There are multiple views combining the total monthly precipitation data (across 6 cities in the
+                    TriMet service area) with the estimated total monthly ridership on TriMet (taken from a weekly
+                    average for each month):</p>
+                    <ul>
+                    <li>A scatter plot of with each marker representing each month’s ridership and precipitation total with
+                    the ability to switch between each mode of transportation (Bus, MAX, Wes)
+                </li>
+            <li>A bar chart for each transit type, showing the selected month for each year in the three year
+                    measurement period with ridership totals and a color scale indicating the total precipitation for
+                    the same time period
+                </li>
+                <li>
+                    A line chart that shows ridership throughout the selected year with each marker radius set indicate
+                    the total precipitation in inches
+                </li>
+                </ul>
+                <p>
+                    All charts are used to explore the relationship precipitation has with ridership. While there seems
+                    to be no obvious patterns with regards to precipitations impact on TriMet’s ridership at a monthly
+                    level, it is important to note that other variables (such as seasonality, weekday vs. weekend
+                    ridership, year over year decline in overall usage, etc.) were not and in some cases could not be
+                    factored into the included charts.
+                </p>
                 <p>The Cost vs Rides chart shows the cost per boarding passenger for buses in each of the four sample
                     periods between 2018 and 2019. The worst and best performers were identified, and maps were used to
                     find where these routes run.
@@ -124,6 +156,15 @@
                     running from downtown Portland to I205 and Foster. Its high density of bus stops in a fully
                     populated area make it the route that is closest to being profitable.
                 </p>
+                <p>Overall, it appears that bus ridership was less likely to be impacted by precipitation when compared
+                    to the WES and MAX which show a slight decline in riders in months with heavy precipitation. There
+                    is also a clear seasonality that presented itself when looking at the month over month ridership for
+                    each year. The summer months (June through August) show a dip each of the three years as does the
+                    month of December. This could be due to multiple factors (riders more likely to bike or walk in
+                    nicer weather, students no longer taking transportation to school, workers and students taking
+                    vacations, etc.). 2019 is the year with the heaviest overall precipitation and the lowest performing
+                    year for TriMet, but this may be less to do with weather and more to do to the general decline of in
+                    ridership that TriMet has experienced over the last several years.</p>
             </div>
         </div>
     </div>
