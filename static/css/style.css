@@ -43,3 +43,11 @@ body {
     padding-bottom: 5px;
     font-weight: bold;
 }
+
+.data-list {
+    list-style-type: square;
+}
+
+.data-list li {
+    line-height: 40px;
+}
